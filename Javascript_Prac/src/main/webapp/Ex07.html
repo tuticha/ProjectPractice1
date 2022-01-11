@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	table {
+		border-collapse: collapse;
+	}
+	td, table {
+		border: 1px solid gray;
+		padding: 20px;
+	}
+	td {
+		text-align: center;
+	}
+</style>
+</head>
+<body>
+	<script>
+//		var size = Number(prompt("칸의 수 : "));     // 3 (확인)
+//		var num = 1;
+		var str;
+		
+		// 8 1 6
+		// 3 5 7
+		// 4 9 2
+		
+		var arr = 
+			[
+				[8,1,6],
+				[3,5,7],
+				[4,9,2]
+			];
+			
+		// 쉬운 방법:
+		//str = "<table>";
+		//str += "<tr><td>8</td><td>1</td><td>6</td></tr>";
+		//str += "<tr><td>3</td><td>5</td><td>7</td></tr>";
+		//str += "<tr><td>4</td><td>9</td><td>2</td></tr>";
+		//str += "</table>";
+		
+		// 어려운방법(고급):
+		str = "<table>";
+		for(var i=0; i<=2; i++) {  // i : 행번호
+			str += "<tr>";
+			for(var j=0; j<=2; j++) {  // j : 열번호
+				str += "<td>" + arr[i][j] + "</td>";
+			}
+			str += "</tr>";
+		}
+		str += "</table>";
+		
+		document.write(str);
+		
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

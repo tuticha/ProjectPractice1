@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입 액션</title>
+<script src = "../js/jquery-3.6.0.min.js"></script>
+<script src = "../js/common.js"></script>
+</head>
+<body>
+
+<script>
+	param= getUrlParams();
+	alert("가입이 완료되었습니다."+decodeURI(param.name)+"님, 안녕하세요:");
+	location.href="login.html";
+</script>
+
+</body>
+</html>

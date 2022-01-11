@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script>
+	function f(){
+		num = Number(document.getElementById("input1").value)+1;
+		document.getElementById("input1").value = num;
+	}
+	/* function f2(){
+		num = Number($("input2").val())+1; //'getter'
+		$("#input2").val(num);//'setter'
+	} */
+
+</script>
+<script>
+	$(function(){
+		$("#input2").val(1);
+		
+		//id가 btn2인 버튼에, 클릭 '이벤트'에 대한 '이벤트 핸들러(리스너)'를 작성.
+		$("#btn2").click(function(){
+			num = Number($("#input2").val())+1;
+			$("#input2").val(num);
+		});	//#btn2에 클릭 이벤트 핸들러를 부착한다.
+		
+		$("#input3").val(100);
+		$("#btn3").click(function(){
+			num2 = Number($("#input3").val())-1;
+			$("#input3").val(num2);
+		});
+
+	
+	});
+
+// $(document).ready(function(){
+//});    //HTML문서가 '준비'(body테그의 내용이 전부 로딩 완료)되었을 때(괄호 안의 내용이) 실행됨
+</script>
+
+</head>
+<body>
+	<input type="text" id="input1" value="0"/>
+	<button onclick="f()">클릭</button>
+	<br/>
+	<input type="text" id="input2" value="0"/>
+	<!-- <button onclick="f2()">클릭</button> -->
+	<button id="btn2">클릭!</button>
+
+	<input type="text" id="input3" value="0"/>
+	<!-- <button onclick="f2()">클릭</button> -->
+	<button id="btn3">클릭!</button>
+	
+
+</body>
+</html>

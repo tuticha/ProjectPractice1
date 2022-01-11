@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.title{
+		font-size:15px;
+		text-align:center;
+	}
+	.timeTable {
+		border-collapse:collapse;
+		border:1px solid black;
+		margin:0 auto;
+		font-size:10pt;
+	}
+	.timeTable th {
+		background-color:#003399;
+		color:white;
+		width:140px;
+		height:16px;
+	}
+	.timeTable th:first-child {
+		width:70px;
+	}
+	.timeTable th, .timeTable td {
+		border:2px solid black;
+		text-align:center;
+	}
+	.timeTable td {
+		font-size:9pt;
+	}
+</style>
+<script src="js/timetable.js"></script>
+</head>
+<body>
+	<script>
+		var str;
+		str = "<div class='title'>2021학년도 2학기 1학년 시간표</div>";
+		
+		str +="<table class='timeTable'>";
+		str += "<tr><td>시간</td><td>월</td><td>화</td><td>수</td><td>목</td><td>금</td></tr>";
+		for(var i=0; i<=15; i++){
+			str+="<tr>"; // 1줄 생성
+			
+			str+="<td>"+timetable[i]+"</td>"; // 시간 넣기
+			
+			for(var j=0; j<=4; j++){ // 과목 넣을 차례
+				if(arr[i][j]==0) {	// 값이 0이면!!
+					// continue -> 아무것도 하지말고 다음 인덱스로 넘어가
+				} else if(typeof arr[i][j] == "undefined") { // 비어있는지 확인
+					str += "<td></td>";	// 비어있으면 빈 태그로 넣기
+				} else {
+					
+					// 아래 for문은 숫자 컬러를 위한 포문
+					var index = 0;
+					for (var k=0; k<=9; k++) { // 비어있지 않을때 몇번쨰 과목이랑 일치하는지 확인
+						if (arr[i][j] == subjects[k]) {
+							index = k; // 일치하는 순간 index에 k를 넣는다.
+						}	
+					}
+					
+					// 아래 for문은 rowspan을 위한 포문
+					var rowspanCnt = 1;
+					for (var k=i+1; k<=15; k++) {
+						if (arr[i][j] == arr[k][j]) {
+							arr[k][j] = '0';	// 다음 자리와 i번째 자리가 같으면 다음 자리 !!!값!!!을 0으로 만들어
+							rowspanCnt++; // 다음 자리와 i번째 자리가 같으면 rowspan 길이를 하나 늘려줘						
+						} else {
+							break;
+						}
+					}
+					
+					if (rowspanCnt == 1) {
+						str += "<td style='background-color:" + colors[index] + ";'>"+arr[i][j]+"</td>";	
+					} else {
+						str += "<td rowspan='"+rowspanCnt+"'style='background-color:" + colors[index] + ";'>"+arr[i][j]+"</td>";
+					}
+					
+				}
+			}
+			str+="</tr>";
+		}
+		str += "</table>";
+		
+		document.write(str);
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src = "../js/common.js"></script>
+</head>
+<body>
+	<div class = "container" style="width:1200px;">
+		<div id ="header">
+			<div class ="fl">
+				<a href="main.html"><img src = "../img3/logo.png"/></a>
+				<span>교육브랜드 4년연속 대상</span>
+			</div>
+			<div class ="fr">
+				<a href = "http://koreastudyroom.com/login_stu.asp" target="_blank">스터디룸</a>
+				<script>
+					param = getUrlParams();
+					
+					if(param.id == null){
+						document.write("<a href='login.html'>로그인</a>");
+						document.write("<a href='register.html'>회원가입</a>");
+					} else{
+						document.write("<a href='main.html'>로그아웃</a>");
+					}
+				</script>
+				<a href="">문의전화 010-2222-2222</a>
+			</div>
+			<div style="clear:both;"></div>
+		</div>
+		<div id = "nav">
+			<ul id = "nav_menu">
+				<li onclick="alert('연결된 페이지가 없습니다!')">아카데미소개</li>
+				<li onclick="alert('연결된 페이지가 없습니다!')">IT 교육과정</li>
+				<li onclick="alert('연결된 페이지가 없습니다!')">국비지원과저</li>
+				<li onclick="alert('연결된 페이지가 없습니다!')">커뮤니티</li>
+				<li onclick="alert('연결된 페이지가 없습니다!')">프로젝트</li>
+				<li onclick="alert('연결된 페이지가 없습니다!')">취업지원센터</li>
+				<li onclick="alert('연결된 페이지가 없습니다!')">고객상담센터</li>
+			</ul>
+		</div>
+		<div>
+			<img src ="../img3/ad1200.jpg" style="width:1200px;">
+		</div>
+		<div id ="section">
+			<div class = "images1">
+				<img src ="../img3/1.jpg">
+				<img src ="../img3/3.jpg">
+				<img src ="../img3/5.jpg">
+				<img src ="../img3/7.jpg">
+			</div>
+			<div class = "images2">
+				<img src ="../img3/2.jpg">
+				<img src ="../img3/4.jpg">
+				<img src ="../img3/6.jpg">
+				<img src ="../img3/8.jpg">
+			</div>
+		</div >
+	</div>
+	<div id ="footer">
+		<div class="fl" style = "float:left;">
+			<img src = "../img3/footer.jpg"/>
+			<div class="fl" style="float:left;"/>
+			</div>
+		</div>
+		<div class="fr">
+		<div>
+			<b>전국지점안내</b><br/>
+				강남점 1관 : 서울특별시 강남구 테헤란로 146 현익빌딩 3층, 4층<br/>
+				강남점 2관 : 서울특별시 강남구 테헤란로 26길 12 제일비전타워 13층<br/>
+				신촌점 : 서율특별시 마포구 서강로 136 아이비타워 2층, 3층<br/>
+				대구점 : 대구광역시 중구 중앙대로 366 반월센트럴타워 9층, 10층<br/>
+				부산점: 부산광역시 부산 진구 중앙대로 668, 에이월프라자 4층
+				
+		</div>
+		</div>
+		
+	</div>
+	
+
+</body>
+</html>

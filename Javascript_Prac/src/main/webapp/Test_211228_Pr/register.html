@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인페이지</title>
+<script src = "../js/jquery-3.6.0.min.js"></script>
+<script src = "../js/common.js"></script>
+</head>
+<style>
+	.fr > a {font-size: 10px; color:grey; text-decoration: none;}
+	.fr > a:not(:last-child) {border:1px solid black; padding:5px;}
+	#nav_menu > li{border-radius:15px; margin-right: 15px; padding:5px;}
+	#nav_menu > li:hover {color:white; background-color: black;}
+	
+</style>
+<script>
+	$(function(){
+		$("#privacy").load('화면구현_개인정보제공.html');
+	});
+</script>
+<body style = "font-family: dotum;">
+	<div class="container" style="width:1200px; margin: 0 auto; padding:20px 0;">
+		<div id ="header">
+			<!--회사로고/ 스터디룸/ 로그인버튼-->
+			<div class = "fl" style="float:left;">
+				<a id="aMain" href="main.html"><img src = "../img3/logo.png" style="width:100px;"/></a>
+				<span style ="color:blue; font-weight: bold; font-size: 13px; vertical-align: super;">교육브랜드 4년연속 대상</span>
+			</div>
+			<div class = "fr" style ="float:right;">
+				<a href = "http://koreastudyroom.com/login_stu.asp" target="_blank">스터디룸</a>
+				<script>
+					param = getUrlParams();
+					
+					if(param.id == null){
+						document.write("<a href='login.html' style='margin-right:5px;'>로그인</a>");
+						document.write("<a href='register.html'>회원가입</a>");
+					} else {
+						document.write("<a href='main.html'>로그아웃</a>");
+					}
+				</script>
+				<a href="">문의전화 010-5595-9500</a>
+			</div>
+			<div style="clear:both;"></div>
+		</div>
+		<div id = "nav">
+			<!--메인페이지 상단 메뉴-->
+			<ul id = "nav_menu" style="list-style-type: none; display:flex; width:820px; margin:30px auto; font-weight: bold;">
+				<li onclick="alert('연결된 페이지가 없습니다!')">아카데미소개</li>
+				<li onclick="alert('연결된 페이지가 없습니다!')">IT 교육과정</li>
+				<li onclick="alert('연결된 페이지가 없습니다!')">국비지원 과정</li>
+				<li onclick="alert('연결된 페이지가 없습니다!')">커뮤니티</li>
+				<li onclick="alert('연결된 페이지가 없습니다!')">프로젝트</li>
+				<li onclick="alert('연결된 페이지가 없습니다!')">취업지원센터</li>
+				<li onclick="alert('연결된 페이지가 없습니다!')">고객상담센터</li>
+			</ul>
+		</div>
+		<div id = "section">
+			<form action ="register_action.html" method="get">
+				<div id ="privacy" style="height:150px; overflow-y:scroll; font-size:12px; color:#333; line-height:140%"></div>
+				<div style="float:right;">
+					<input type = "checkbox" name="agree" id="agree" required/>
+					<label for = "agree">위 이용약관 및 보호정책에 동의합니다.</label>
+				</div>
+				<table style ="width:400px; margin:0 auto;">
+					<tr>
+						<td>이름</td>
+						<td><input type="text" name="name" required/></td>
+					</tr>				
+					<tr>
+						<td>아이디</td>
+						<td><input type="text" name="id" required/></td>
+					</tr>				
+					<tr>
+						<td>비밀번호</td>
+						<td><input type="text" name="pw" required/></td>
+					</tr>				
+					<tr>
+						<td>핸드폰</td>
+						<td><input type="text" name="phone" required/></td>
+					</tr>				
+					<tr>
+						<td>이메일</td>
+						<td><input type="text" name="email" required/></td>
+					</tr>				
+					<tr>
+						<td>수강희망과목</td>
+						<td><textarea name="subjects" rows="5"></textarea></td>
+					</tr>				
+					<tr>
+						<td colspan="2"><input type="submit" value="입력완료"/></td>
+					</tr>				
+								
+				
+				</table>
+			</form>
+			
+		</div>
+		
+	</div>
+	<div id = "footer" style="background-color: rgb(51,51,51); height:164px; padding:20px;">
+		<!--대표자 / 개인정보책임자 및 전국지점안내 등-->
+		<div class="fl" style="float:left;">
+			<img src ="../img3/footer.jpg" style="float:left;"/>
+			<div class="fl" style="float:left; color:white; margin-left: 10px;">
+				대표자 : YG 개인정보책임자 : YG<br/>
+				교육담당: 교육상담실<br/>
+				Email : yg.it.yg@korea.com<br/>
+				사업자번호 : 888-76-54321<br/>
+				통신판매업번호 : 2021 - 서울마포 - 01234호<br/>
+				학원등록번호 : 제12345호
+			</div>
+		</div>
+		<div class="fr" style="float:right; color:white;">
+		<div>
+			<b>전국지점안내</b><br/>
+				강남점 1관 : 서울특별시 강남구 테헤란로 146 현익빌딩 3층,4층<br/>
+				강남점 2관 : 서울특별시 강남구 테헤란로 26길 12 제일비전타워 13층<br/>
+				신촌점 : 서울특별시 마포구 서강로 136 아이비티워 2층,3층<br/>
+				대구점 : 대구광역시 중구 중앙대로 366 반월센트럴타워 9층,10층<br/>
+				부산점 : 부산광역시 부산진구 중앙대로 668, 에이원프라자 4층
+		</div>
+		</div>
+		
+	</div>
+
+</body>
+</html>

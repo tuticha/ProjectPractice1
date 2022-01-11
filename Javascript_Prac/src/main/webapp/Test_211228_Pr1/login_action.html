@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인 액션 페이지</title>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script src="../js/common.js"></script>
+</head>
+<body>
+	<script>
+		param = getUrlParams();
+		if(param.id != null){
+			alert('로그인에 성공하였습니다.');
+			location.href="main.html? id ="+param.id;
+		}
+	</script>
+
+</body>
+</html>

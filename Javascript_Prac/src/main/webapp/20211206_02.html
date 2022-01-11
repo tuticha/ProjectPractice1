@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+	function random() {
+		// 0 ~ 9 까지 한자리 숫자 난수 생성
+		a = Math.random() * 9;
+		a = parseInt(a);
+		document.getElementById('n1').value = a;  // 태그의 value에 값 넣어주기
+		
+		// 0 ~ 9 까지 한자리 숫자 난수 생성
+		b = Math.random() * 9;
+		b = parseInt(b);
+		document.getElementById('n2').value = b; // 태그의 value에 값 넣어주기
+		
+		// 0 ~ 2 까지 한자리 숫자(0,1,2) 난수 생성 (연산자 3개)
+		c = Math.random() * 2;
+		c = parseInt(c);
+		if (c == 0) {
+			c = '+';
+			result = a + b; // 결과에 연산 저장
+		} else if (c == 1) {
+			c = '-';
+			result = a - b;  // 결과에 연산 저장
+		} else {
+			c = '*';
+			result = a * b;  // 결과에 연산 저장
+		}
+		document.getElementById('op').value = c;  // 태그의 value에 값 넣어주기
+	}
+	
+	function inputResult() {
+		answer = prompt('정답을 입력하시오.'); // 프롬프트를 실행하고 사용자가 입력한 값을 answer에 저장
+		
+		if (answer == result) { // 사용자가 입력한 answer이 위에 result랑 같으면 정답.
+			alert('정답!');
+		} else {
+			alert('떙이쟈나 멍청아~');
+		}
+	}
+	
+</script>
+<body>
+	<button onclick="random()">난수 생성하기</button><br/><br/>
+	num1: <input type="text" id="n1" /><br/>
+	num2: <input type="text" id="n2" /><br/>
+	op: <input type="text" id="op" /><br/><br/>
+	
+	<button onclick="inputResult()">정답 입력</button><br/><br/>
+	
+	
+</body>
+</html>

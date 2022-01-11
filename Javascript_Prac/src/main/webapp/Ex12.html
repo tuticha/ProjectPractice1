@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+	$(function() {
+		$("#btn1").click(function() {
+			n = $("#num").val();
+			
+			//$("#div1").text("<b>"+n+"</b>");     // 제이쿼리 함수 text() 
+			$("#div1").html("<b>"+n+"</b>");     // 제이쿼리 함수 html()
+			$("#div1").css("border","1px solid gray");	// 제이쿼리함수 css()
+			$("#div1").css("width", "200px");
+			$("#div1").attr("class", "red");   	// 제이쿼리 함수 attr()
+			
+			alert($('#div1').attr('class')); // class 라는 속성의 값을 가지고 옴
+		});
+		
+	});
+</script>
+<style>
+	.red {
+		color: red;
+	}
+</style>
+</head>
+<body>
+	<input type="text" id="num"/>
+	<button id="btn1">입력</button> <br/>
+	<div id="div1"></div>
+</body>
+</html>
+

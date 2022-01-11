@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+	function multiply(){//"함수"(NOT 메서드)
+		a = document.getElementById("n1").value;
+		b = document.getElementById("n2").value;
+		mul = a * b;
+		document.getElementById("result").value = mul;
+	}
+	
+	function divide(){
+		c = document.getElementById("n1").value;
+		d = document.getElementById("n2").value;
+		div = c / d;
+		document.getElementById("result").value = div;
+	}
+</script>
+<body>
+	num1: <input type="text" id="n1" value="2"/><br/>
+	num2: <input type="text" id="n2" value="3"/><br/><br/>
+	<button onclick="multiply()" style=margin-right:3px;>곱하기</button>
+	<button onclick="divide()">나누기</button><br/>
+	result : <input type="text" id="result">
+</body>
+</html>

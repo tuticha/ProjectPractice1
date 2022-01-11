@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>211209 TEST PRACTICE</title>
+<style>
+	.main {width:900px; height:100px;}
+	h1 {display:inline-block; margin-bottom: 50px;}
+	.main > div {border-top: 2px solid black;}
+	
+	.main_left{float:left; width:170px; height:600px;margin-top: 20px;}
+	.main > div > div {float: left;}
+	.main > div > div:nth-child(2) {border-left: 2px solid black; margin: 0 20px; height: 600px;}
+	.main_right{float:left; width:688px; height:600px;margin-top: 20px;}
+	.bookSearch {margin-left:43px;} 
+	.main_right > tr td {width:160px; height:80px; margin-left:43px;}
+    .innerBox {border: 1px solid black; margin:0 10px 10px 40px;}
+    .innerBox td {padding:10px;}
+    .innerBox tr {border-bottom: 1px solid black}
+	
+</style>
+</head>
+<body style="width:960px";>
+ 	<div class="main">
+	 	<h1 class="main_top"><img src="img/logo.svg" alt="" style= "width:160px; height:80px; margin-left:43px;"></h1>
+	 	<div>
+	 		<div class="main_left"><input class="bookSearch" type="button" value="도서검색" style="width:100px; height:30px;"/>
+		</div>
+	 	<div></div>
+	 	<div class="main_right">
+	 	<table>
+	 		<tr>
+        		<td><input class="bookNameSearch" type="text" placeholder="도서명 검색"/></td>
+         		<td><button style="background-color:white; border:1px solid grey; color:grey";>검색</button></td>
+      		</tr>
+      		<tr>
+         		<td class="borderBox2"></td>
+         		<td style="text-align: right;">정렬방식</td>
+         		<td>
+            		<select>
+		               <option>선택하세요</option>
+		               <option>번호</option>
+		               <option>도서명</option>
+		               <option>대출여부</option>
+           		 	</select>
+         		</td>
+     		 </tr>
+     		 <tr>
+         		<td class="borderBox2"></td>
+         		<td colspan="2">
+            		<table class="innerBox">
+               			<tr>
+                  			<td>1</td>
+                  			<td>도서명</td>
+                  			<td>대출중</td>
+                  			<td><button style="background-color:white; border:1px solid red; color:red"; >보기</button></td>
+		                  	<td></td>
+               			</tr>
+               			<tr>
+			                  <td>2</td>
+			                  <td>도서명</td>
+			                  <td>대출가능</td>
+			                  <td><button style="background-color:white; border:1px solid red; color:red";>보기</button></td>
+			                  <td><button style="background-color:white; border:1px solid blue; color:blue";>대출</button></td>
+               			</tr>
+               			<tr>
+		                  <td>3</td>
+		                  <td>도서명</td>
+		                  <td>대출가능</td>
+		                  <td><button style="background-color:white; border:1px solid red; color:red";>보기</button></td>
+		                  <td><button style="background-color:white; border:1px solid blue; color:blue";>대출</button></td>
+              			 </tr>
+						<tr>
+		                  <td>4</td>
+		                  <td>도서명</td>
+		                  <td>대출가능</td>
+		                  <td><button style="background-color:white; border:1px solid red; color:red";>보기</button></td>
+		                  <td><button style="background-color:white; border:1px solid blue; color:blue";>대출</button></td>
+             	  		</tr>
+            		</table>
+         		</td>
+      		</tr>
+   		</table>
+	 		
+	 		
+	 	</div>
+ 		</div>
+ 	</div>
+</body>
+</html>

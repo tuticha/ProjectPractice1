@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>첫번째 페이지</title>
+<script>
+	function check(){
+		var id = frm.id.value;
+		var pw = frm.pw.value;
+		var pwChk = /^[A-Za-z+]*$/;
+		
+		if(id.length < 8){
+			alert('아이디는 8글자 이상 입력해');
+			return false;
+		} else if(!pwChk.test(pw.charAt(0))){ // 테스트 통과하지 않을때 alert()을 띄워야 한다.
+			alert('영문자로 시작해야합니다');
+			return false;
+		} 
+		return true;
+	}
+		/* var c =pw.charAt(0); */
+	
+	
+</script>
+<!-- return check();->체크함수룰 살행한 결과를 받아와라/ check()->체크함수를 실행해라/ 
+체크 한 결과가 true일때만 action해라, false이면 action하지마라  -->
+<!-- type="password"는 type="text"랑 똑같지만 화면에서 보이지않게 해주는 기능을 가지고 있음 ex)****-->
+</head>
+<body>
+	<form name="frm" action="Ex10p2.html">
+		ID: <input type ="text" name ="id"/><br/>
+		PW: <input type ="password" name="pw"/><br/>
+		<input type="submit" value="로그인" onclick="return check();"/>
+		<input type="button" value="테스트1" />	<!-- 순수 버튼 기능만 있음 -->
+		<button>테스트2</button> <!-- submit하는 역할이 포함되어 있음 -->
+	</form>
+	
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src = "../js/jquery-3.6.0.min.js"></script>
+<script src = "../js/common.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+	param = getUrlParamas();
+	if(param.id == null){
+		document.write("<a href='login.html'>로그인</a>");
+		document.write("<a href='register.html'>회원가입</a>")
+	} else {
+		document.write("<a href='main.html>로그아웃</a>")
+	}
+	
+	
+</script>
+
+</body>
+</html>

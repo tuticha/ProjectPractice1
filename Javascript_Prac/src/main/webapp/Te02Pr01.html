@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	table td {border-bottom:1px solid black;}
+</style>
+</head>
+<body style="width:960px;">
+	<div style="width:400px; border:2px solid black; padding:0 20px 25px 20px;">
+		<div style="border-bottom:2px solid black;"><h1><img src="img/logo.svg" alt="" style="width:80px;"/></h1></div>
+		<div style="display:flex;">
+			<div style="border-right:2px solid black; padding:15px;">
+				<button>도서검색</button>
+			</div>
+			<div style="padding:20px;">
+				<div>
+					<input type="text" placeholder="입력란"/>
+					<input type="submit" value="검색" style="border:1px solid grey; background-color: white; color:grey; "/>
+				</div>
+				<div style="text-align:right;">정렬방식
+					<select>
+						<option>선택하세요</option>
+					</select>
+				</div>
+				<div style="padding-top:20px;">
+					<table style="border-collapse:collapse; border:none;">
+						<tr>
+							<td>1</td>
+							<td>도서명</td>
+							<td>대출중</td>
+							<td><button style="border:1px solid red; background-color:white; color:red;">보기</button></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>도서명</td>
+							<td>대출가능</td>
+							<td><button style="border:1px solid red; background-color:white; color:red;">보기</button></td>
+							<td><button style="border:1px solid red; background-color:white; color:blue;">대출</button></td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>도서명</td>
+							<td>대출가능</td>
+							<td><button style="border:1px solid red; background-color:white; color:red;">보기</button></td>
+							<td><button style="border:1px solid blue; background-color:white; color:blue">대출</button></td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>도서명</td>
+							<td>대출가능</td>
+							<td><button style="border:1px solid red; background-color:white;color:red;">보기</button> </td>
+							<td><button style="border:1px solid blue; background-color:white; color:blue;">대출</button></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	
+	</div>
+
+</body>
+</html>

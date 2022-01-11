@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.6.0.min.js"></script>
+<style>
+	#div_main {
+		width:960px;
+		margin:0 auto;
+	}
+	table {
+		border-collapse: collapse;
+	}
+	td {
+		border: 3px solid #9f9f9f;
+		width: 240px;
+		text-align: center;
+		font-size: 24px;
+	}
+	#div_main > div > div {
+		font-size: 30px;
+		padding: 10px 0;
+		width:240px;
+		border-bottom: 3px solid #9f9f9f;
+		text-align: center;
+	}				
+	#div_main input[type="text"] {
+		text-align: center;
+		padding: 10px 0;
+	}
+	.plus, .minus, .qty {
+		font-size: 30px;
+		padding: 10px;
+		border-radius: 20px;
+	}
+</style>
+<script>
+	//var g_item = "";
+	function all_item_price() {			// 어려움 -----------> 반복문 없이 아이디로 하시면 쉬워요.
+		// .price  *  .qt   ----> .item_price   (모든 tr에 대해서)
+		$("#div_main table tr").each(function(idx, item) {	// each 함수를 호출할때 idx(인덱스), item(해당 요소)를 가져와서 쓸수 있다.
+			//alert(item);
+			//g_item = item;
+			//alert($(this).prop("tagName"));
+			if (idx%2 == 0) {
+				$(this).css("background-color", "gray");
+			}
+			price = Number($(this).find(".price").text().replace('원',''));
+			qty = Number($(this).find(".qty").val());
+			item_price = $(this).find(".item_price");
+			item_price.text(price * qty + "원");
+		});
+	}
+	function calc_total_price() {
+		sum = 0;
+		//$("#div_main table tr .item_price").each(function(idx, item) {
+		$("#div_main table tr .item_price").each(function() {
+			item_price = $(this).text().replace('원','');
+			sum += Number(item_price);
+		});
+		$("#total_price").text("총 " + sum + " 원");
+	}
+	$(function() {
+		all_item_price();
+		calc_total_price();
+		
+		$(".plus").click(function() {
+			//alert( $(this).prop("tagName") );   // button
+			
+			qty = Number($(this).parent().find(".qty").val());
+			qty = qty+1;
+			$(this).parent().find(".qty").val(qty);
+			all_item_price();
+			calc_total_price();
+		});
+		$(".minus").click(function() {
+			qty = Number($(this).parent().find(".qty").val());
+			qty = qty-1;
+			if(qty<0)
+				qty=0;
+			$(this).parent().find(".qty").val(qty);
+			all_item_price();
+			calc_total_price();
+		});		
+	});
+</script>
+</head>
+<body>
+	<div id="div_main">
+		<table>				<!-- quantity(qty) : 수량 -->
+			<tr>
+				<td><img src="img/수미칩1600.png" style="width:140px;"/></td>
+				<td class="price">1600원</td>
+				<td>
+					<button class="plus">+</button>
+					<input type="text" class="qty" size="2" value="1"/>
+					<button class="minus">-</button>
+				</td>
+				<td class="item_price"></td>
+			</tr>
+			<tr>
+				<td><img src="img/참깨라면1000.png" style="width:140px;"/></td>
+				<td class="price">1000원</td>
+				<td>
+					<button class="plus">+</button>
+					<input type="text" class="qty" size="2" value="1"/>
+					<button class="minus">-</button>
+				</td>
+				<td class="item_price"></td>
+			</tr>
+			<tr>
+				<td><img src="img/햇반600.png" style="width:140px;"/></td>
+				<td class="price">600원</td>
+				<td>
+					<button class="plus">+</button>
+					<input type="text" class="qty" size="2" value="2"/>
+					<button class="minus">-</button>
+				</td>
+				<td class="item_price"></td>
+			</tr>
+		</table>
+		<div>
+			<div id="total_price" style="float:right;">
+				-
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+

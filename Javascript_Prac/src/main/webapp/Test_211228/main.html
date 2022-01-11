@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>메인페이지</title>
+<script src ="../js/common.js"></script>
+<style>
+	body { margin:0; font-family:"dotum"; }
+	.fl { float:left; }
+	.fr { float:right; }
+	.container { width:1200px; margin:0 auto; padding:20px 0 0; }
+	body>div:not(:first-child) { border:1px solid gray; }
+	div#header>div>span { line-height:25px; vertical-align:top; color:#2d47ab; font-weight:800; font-size:13px; letter-spacing:-2px; }
+	div#header>div>a { font-size:11px; color:#666666; }
+	div#header>div>a:not(:last-child, #aMain) { text-decoration:none; padding:2px; border:1px solid black; vertical-align:middle; }
+	div#header>div>a:last-child { text-decoration:none; vertical-align:middle; }
+	ul#nav_menu { width:820px; margin:0 auto; padding: 20px 0 60px; font-weight:900; }
+	ul#nav_menu>li { list-style-type:none; font-size:14px; }
+	ul#nav_menu>li>a { text-decoration:none; margin-left:15px; color:#2f2f2f; padding:10px; border-radius:30px;}
+	ul#nav_menu>li>a:hover { color:white; background-color:black; }
+	div.section>div:not(#ad) img:nth-child(1),div.section>div:not(#ad) img:nth-child(2) { width:349px; }
+	div.section>div:not(#ad) img:nth-child(3),div.section>div:not(#ad) img:nth-child(4) { width:226px; }
+	div.section>div:not(#ad) img:nth-child(3) { margin-left:30px; }
+	div.section { padding: 50px 0; }
+	div#footer { height:164px; background-color:rgb(51,51,51);}
+	div#footer>div>div>div { font-size:12px; color:#b2b2b2; }
+	div#footer>div>div>div:nth-child(2) { margin-left:10px; }
+	div#footer>div>div>div>b { font-size:13px; color:#fff; }
+</style>
+</head>
+<script>
+	function on_the_progress() {
+		alert('준비중입니다.');
+	}
+	function logout(){
+		location.href = 'main.html';//?, id가 url에서 없어진다는 것이 로그아웃을 처리했다는 뜻
+	}
+</script>
+<body>
+	<div class="container">
+		<div id="header">
+			<div class="fl">
+				<a id="aMain" href="main.html"><img src="../img3/logo.png" style="width:100px;"/></a>
+				<span>교육브랜드 4년연속 대상</span>
+			</div>
+			<div class="fr">
+				<a href="http://koreastudyroom.com/login_stu.asp" target="_blank">스터디룸</a>
+				<script>
+					param = getUrlParams();
+					
+					if(param.id==null) {
+						document.write("<a href='login.html'>로그인</a>");
+						document.write("<a href='register.html' style='margin-left:5px;'>회원가입</a>");
+					} else {
+						document.write("<a href='javascript:logout();'>로그아웃</a>");
+					}
+				</script>
+				<a href="">문의전화 010-5595-9500</a>
+			</div>
+			<div style="clear:both;"></div>
+		</div>
+		
+		<div id="nav">
+			<ul id="nav_menu">
+				<li><a href="javascript:on_the_progress();" class="fl">아카데미소개</a></li>
+				<li><a href="javascript:on_the_progress();" class="fl">IT 교육과정</a></li>
+				<li><a href="javascript:on_the_progress();" class="fl">국비지원 과정</a></li>
+				<li><a href="javascript:on_the_progress();" class="fl">커뮤니티</a></li>
+				<li><a href="javascript:on_the_progress();" class="fl">프로젝트</a></li>
+				<li><a href="javascript:on_the_progress();" class="fl">취업지원센터</a></li>
+				<li><a href="javascript:on_the_progress();" class="fl">고객상담센터</a></li>
+			</ul>
+		</div>
+		<div class="section">
+			<div id="ad">
+				<a href="http://koreaitacademy.com/" target="_blank"><img src="../img3/ad1200.jpg"/></a>
+			</div>
+		</div>
+		<div class="section">
+			<div>
+				<img src="../img3/1.jpg"/>
+				<img src="../img3/3.jpg"/>
+				<img src="../img3/5.jpg"/>
+				<img src="../img3/7.jpg"/>
+			</div>
+			<div>
+				<img src="../img3/2.jpg"/>
+				<img src="../img3/4.jpg"/>
+				<img src="../img3/6.jpg"/>
+				<img src="../img3/8.jpg"/>
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+		<div class="container">
+			<div class="fl">
+				<div class="fl"><img src="../img3/footer.jpg"/></div>
+				<div class="fl">
+					대표자 : YG 개인정보책임자 : YG<br/>
+					교육담당: 교육상담실<br/>
+					Email : yg.it.yg@korea.com<br/>
+					사업자번호 : 888-76-54321<br/>
+					통신판매업번호 : 2021 - 서울마포 - 01234호<br/>
+					학원등록번호 : 제12345호
+				</div>
+				<div style="clear:both;"></div>
+			</div>
+			<div class="fr">
+				<div>
+					<b>전국지점안내</b><br/>
+						강남점 1관 : 서울특별시 강남구 테헤란로 146 현익빌딩 3층,4층<br/>
+						강남점 2관 : 서울특별시 강남구 테헤란로 26길 12 제일비전타워 13층<br/>
+						신촌점 : 서울특별시 마포구 서강로 136 아이비티워 2층,3층<br/>
+						대구점 : 대구광역시 중구 중앙대로 366 반월센트럴타워 9층,10층<br/>
+						부산점 : 부산광역시 부산진구 중앙대로 668, 에이원프라자 4층
+				</div>
+			</div>
+			<div style="clear:both;"></div>
+		</div>
+	</div>
+</body>
+</html>

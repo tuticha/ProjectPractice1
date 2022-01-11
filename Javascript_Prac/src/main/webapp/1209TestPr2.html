@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.loginWrap {width:900px; margin: 100px auto;}
+
+	.innerBox {border: 1px solid gray; padding: 15px; display: flex;}
+	.loginBox {border: 1px solid #ed1746; width: 600px; height: 298px; margin-top: 6px;}
+	
+	.loginBoxTitle {color: #fff; background-color: red; font-size: 15px; padding: 5px;}
+	.loginBoxTitle span {font-weight: bold;}
+	
+	.loginForm {background-color: pink; padding-top: 50px; height: 218px;}
+	.loginForm form {display: flex; margin: 0 auto; width: 380px; margin-bottom: 30px;}
+	.loginForm form div:first-child {margin-right: 8px; text-align: right;}
+	.loginForm form div:first-child span {line-height: 25px;}
+	.loginForm form div:nth-child(3) {padding-top: 2px;}
+	.loginForm form div:nth-child(3) input {width:60px; height: 47px; background-color: red; color: #fff; font-weight: bold; border-radius: 5px; border: none; margin-left: 5px;}
+	
+	.loginForm > div:nth-child(2) {width: 380px; margin: 0 auto; text-align: center;}
+	.loginForm > div:nth-child(3) {margin: 10px auto; text-align: center;}
+	.loginForm > div:nth-child(3) > input:first-child {margin-right: 30px;}
+	
+</style>
+
+</head>
+<body>
+
+	<div class="loginWrap">
+		<div> <!-- 이미지 중간 매치 시 text-align: center -->
+			<img src="img/testpict1.JPG" alt=""> 
+		</div>
+		
+		<div class="innerBox">
+			<div class="loginBox">
+				<div class="loginBoxTitle">MEMBER <span>LOGIN</span></div>
+				<div class="loginForm">
+					<form action="https://www.naver.com">
+						<div>
+							<span>아이디</span><br/>
+							<span>비밀번호</span>
+						</div>
+						<div>
+							<input type="text" placeholder="아이디 입력" /><br/>
+							<input type="text" placeholder="비밀번호 입력" />
+						</div>
+						<div>
+							<input type="submit" value="LOGIN" /> <!-- <button></btton> 과 동일한 역할 -->
+							<input type="reset" value="RESET" /> <!-- 사용자가 값을 입력할 form태그에 같이 안에 있어야 작동함. -->
+						</div>
+					</form>
+					
+					<div>
+						<input type="checkbox" id="saveIdBtn"/>
+						<label for="saveIdBtn">ID 저장</label>
+						<input type="checkbox" id="continueIdBtn"/>
+						<label for="continueIdBtn">로그인 상태유지</label>
+						<br/>
+						<input type="radio" name="gender" /> 남
+						<input type="radio" name="gender" /> 여
+						<br/>
+						<input type="radio" name="resion" /> 서울
+						<input type="radio" name="resion" /> 경기
+						<input type="radio" name="resion" /> 기타
+					</div>
+					<div>
+						<input type="button" value="회원가입"/>
+						<input type="button" value="아이디/비밀번호 찾기" />
+					</div>
+				</div>			
+			</div>
+			<div>
+				<img src="img/testpict2.JPG" alt="">			
+			</div>
+		</div>
+	</div>
+
+
+</body>
+</html>

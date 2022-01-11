@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--"유효성 체크"
+-사용자가 '유효한'값을 입력하였는지 검사.
+-form태그 안에서 submit버튼에 붙여주는 기능으로 이해
+-[이해]onclick="return false;"을 submit버튼에 사용?
+		------submit버튼은 onclick속성의 내용을 실행한 결과,
+			  true를 리턴하면 다음페이지로 넘어가고
+			  false를 리턴하면 안 넘어감.
+			  			//이를 사용해서 '유효성 체크'-->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>첫번째 페이지</title>
+<script>
+	function check(){
+		//사용자가 제대로 입력했으면 true를 리턴, 아니면 false를 리턴하는 함수.
+		//내가 정한 규칙: 아이디는 8글자 이상/ 비밀번호는 영문자로 시작.
+		var id = frm.id.value;
+		var pw = frm.pw.value;
+		
+		if(id.length < 8) {
+			alert('아이디는 8글자 이상 입력해');
+			return false;
+		}
+		var c = pw.charAt(0);
+		alert(c);
+		
+		return true;
+	}
+
+
+
+</script>
+</head>
+<body>
+	<form name="frm" action="Ex10p2.html">
+		ID: <input type="text" name="id"/><br/>
+		PW: <input type="password" name="pw"/><br/>
+	<input type="submit" value="로그인" onclick="return check();"/>	
+	</form>
+
+</body>
+</html>

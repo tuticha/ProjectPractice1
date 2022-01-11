@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function getUrlParams() {
+	    var params = {};
+	    window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) { 
+	    	params[key] = value; 
+	    });
+	    return params;
+	}
+</script>
+</head>
+<body>
+	<script>
+		params = getUrlParams();
+		s = params.str;
+		s = s.split("").reverse().join("");		
+		document.write("뒤집은 문자열 : " + s);
+	</script>	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	table {border-collapse:collapse;}
+	table, td {border:1px solid #afafaf;}
+	td { text-align: center;}
+</style>
+<script>
+	function btn_clicked(){
+		//innerHTML을 사용해서, 4개의 input들의 내용을 테이블로 그려보세요!
+		document.getElementById("div1").innerHTML =
+			"<table>"
+			+"<tr>"
+			+"<td>"+document.getElementById("cell_a").value+"</td>"
+			+"<td>"+document.getElementById("cell_b").value+"</td>"
+			+"</tr>"
+			+"<tr>"
+			+"<td>"+document.getElementById("cell_c").value+"</td>"
+			+"<td>"+document.getElementById("cell_d").value+"</td>"
+			+"</tr>"
+			+"</table>";
+			
+			
+	}
+</script> 
+</head>
+<body>
+	<input type="text" id="cell_a"/>
+	<input type="text" id="cell_b"/><br/>
+	<input type="text" id="cell_c"/>
+	<input type="text" id="cell_d"/><br/>
+	<button onclick="btn_clicked()">입력완료</button><!-- onclick은 button의 속성 --> 
+	<div id="div1"></div>
+</body>
+</html>
